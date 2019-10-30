@@ -35,35 +35,35 @@ func main() {
 
 	dbop := sqlt.New(dbx, tpl)
 
-	staff1 := new(Staff)
+	//	staff1 := new(Staff)
 
-	staff1.CreatedAt = time.Now()
-	staff1.UpdatedAt = time.Now()
-	staff1.StaffId = 12345
-	staff1.StaffName = "MikeWang"
-	sqlt.MustExec(dbop, context.Background(), "Staff.insert", staff1)
+	//	staff1.CreatedAt = time.Now()
+	//	staff1.UpdatedAt = time.Now()
+	//	staff1.StaffId = 12345
+	//	staff1.StaffName = "MikeWang"
+	//	sqlt.MustExec(dbop, context.Background(), "Staff.insert", staff1)
 
-	staff2 := new(Staff)
-	staff2.CreatedAt = time.Now()
-	staff2.UpdatedAt = time.Now()
-	staff2.StaffId = 67890
-	staff2.StaffName = "It512"
-	sqlt.MustExec(dbop, context.Background(), "Staff.insert", staff2)
+	//	staff2 := new(Staff)
+	//	staff2.CreatedAt = time.Now()
+	//	staff2.UpdatedAt = time.Now()
+	//	staff2.StaffId = 67890
+	//	staff2.StaffName = "It512"
+	//	sqlt.MustExec(dbop, context.Background(), "Staff.insert", staff2)
 
-	staff := new(Staff)
-	staff.StaffId = 67890
-	h := new(StaffHandler)
-	sqlt.MustQuery(dbop, context.Background(), "Staff.select", staff, h)
+	//	staff := new(Staff)
+	//	staff.StaffId = 67890
+	//	h := new(StaffHandler)
+	//	sqlt.MustQuery(dbop, context.Background(), "Staff.select", staff, h)
 
-	for _, s := range h.Staffs {
-		fmt.Println(s)
-	}
+	//	for _, s := range h.Staffs {
+	//		fmt.Println(s)
+	//	}
 
-	staff = new(Staff)
-	staff.StaffId = 12345
-	staff.StaffName = "god"
-	staff.UpdatedAt = time.Now()
-	sqlt.MustExec(dbop, context.Background(), "Staff.update", staff)
+	//	staff = new(Staff)
+	//	staff.StaffId = 12345
+	//	staff.StaffName = "god"
+	//	staff.UpdatedAt = time.Now()
+	//	sqlt.MustExec(dbop, context.Background(), "Staff.update", staff)
 
-	sqlt.MustExec(dbop, context.Background(), "Staff.delete", nil)
+	//	sqlt.MustExec(dbop, context.Background(), "Staff.delete", nil)
 }
